@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2023-2025 The LineageOS Project
+     SPDX-FileCopyrightText: The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -117,4 +117,19 @@
     <string name="set_wallpaper_lock_screen">מסך נעילה</string>
     <string name="set_wallpaper_both">מסך בית ומסך נעילה</string>
     <string name="warning_bin_time_period">הקבצים יימחקו לצמיתות לאחר 30 יום.</string>
+    <string name="motion_photo_show_video">הצגת וידאו</string>
+    <string name="motion_photo_show_photo">הצגת תמונה</string>
+    <string name="title_activity_settings">הגדרות</string>
+    <string name="general_header">כללי</string>
+    <string name="video_header">וידאו</string>
+    <string name="edge_tap_navigation_enable_title">ניווט בהקשה על הקצה</string>
+    <string name="edge_tap_navigation_enabled_description">הקשה על הקצה השמאלי או הימני של המסך כדי לנווט בין מדיה</string>
+    <string name="double_tap_to_seek_enabled_title">הפעלת הקשה כפולה להתקדמות</string>
+    <string name="double_tap_to_seek_enabled_description">הקשה כפולה על הצד השמאלי או הימני של הוידיאו כדי לדלג אחורה או קדימה</string>
+    <string name="double_tap_to_seek_seconds_title">הקשה כפולה להצגת זמן הדילוג</string>
+    <string name="double_tap_to_seek_seconds_description">כמה שניות לדלג בכל הקשה כפולה על הוידיאו</string>
+    <string name="hide_native_seek_buttons_title">הסתרת כפתורי תצוגה מקוריים</string>
+    <string name="hide_native_seek_buttons_description">הסתרת הכפתורים אחורה וקדימה מפקדי ניגון המדיה</string>
+    <string name="remember_video_playback_position_enabled_title">זכירת מיקום הניגון</string>
+    <string name="remember_video_playback_position_enabled_description">המשך הניגון ממקום העצירה האחרון</string>
 </resources>

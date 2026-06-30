@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2023-2025 The LineageOS Project
+     SPDX-FileCopyrightText: The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -95,4 +95,19 @@
     <string name="set_wallpaper_lock_screen">Kilid ekranı</string>
     <string name="set_wallpaper_both">Əsas ekran və Kilid ekranı</string>
     <string name="warning_bin_time_period">Fayllar, 30 gün sonra həmişəlik silinəcək.</string>
+    <string name="motion_photo_show_video">Videonu göstər</string>
+    <string name="motion_photo_show_photo">Fotonu göstər</string>
+    <string name="title_activity_settings">Ayarlar</string>
+    <string name="general_header">Ümumi</string>
+    <string name="video_header">Video</string>
+    <string name="edge_tap_navigation_enable_title">Kənar naviqasiya</string>
+    <string name="edge_tap_navigation_enabled_description">Media faylları arasında gəzinmək üçün ekranın sol və ya sağ kənarına toxunun</string>
+    <string name="double_tap_to_seek_enabled_title">Cüt toxunaraq irəli/geri çəkməni fəallaşdır</string>
+    <string name="double_tap_to_seek_enabled_description">Videonun sol/sağ hissələrinə cüt toxunaraq geri/irəli ötürə bilərsiniz</string>
+    <string name="double_tap_to_seek_seconds_title">Cüt toxunaraq irəli/geri çəkmə müddəti</string>
+    <string name="double_tap_to_seek_seconds_description">Videoya cüt toxunduğunuz zaman ötürüləcək saniyə</string>
+    <string name="hide_native_seek_buttons_title">Daxili çəkmə düymələrini gizlət</string>
+    <string name="hide_native_seek_buttons_description">Video pleyer kontrollarından geri/irəli çəkmə düymələrini gizlət</string>
+    <string name="remember_video_playback_position_enabled_title">Oxutma mövqeyini xatırla</string>
+    <string name="remember_video_playback_position_enabled_description">Videoları son dayandığı yerdən davam etdir</string>
 </resources>
