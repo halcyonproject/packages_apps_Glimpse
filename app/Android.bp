@@ -16,6 +16,7 @@ android_app {
 
     sdk_version: "36",
     product_specific: true,
+    kotlincflags: ["-Xjvm-default=all"],
 
     aaptflags: [
         // DO NOT EDIT THIS SECTION MANUALLY
@@ -78,6 +79,14 @@ android_app {
         "Glimpse_io.github.panpf.zoomimage_zoomimage-core-android",
         "Glimpse_io.github.panpf.zoomimage_zoomimage-view-glide",
         "kotlin-stdlib",
+        "HalcyonUILib",
+        "androidx.compose.ui_ui",
+        "androidx.compose.material3_material3",
+        "androidx.compose.runtime_runtime",
+        "androidx.compose.foundation_foundation",
+        "androidx.compose.animation_animation",
+        "androidx.compose.material_material-icons-extended",
+        "BlurView",
     ],
 
     optimize: {

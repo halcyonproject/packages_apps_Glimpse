@@ -130,6 +130,14 @@ class AlbumsFragment : Fragment(R.layout.fragment_albums) {
                 end = true,
             )
 
+            val bottomPadding = insets.bottom + resources.getDimensionPixelSize(org.hlcyn.ui.R.dimen.nest_bottom_bar_height) + resources.getDimensionPixelSize(org.hlcyn.ui.R.dimen.nest_bottom_bar_margin_bottom) + resources.getDimensionPixelSize(R.dimen.main_bottom_nav_bar_margin_bottom)
+            recyclerView.setPadding(
+                recyclerView.paddingLeft,
+                recyclerView.paddingTop,
+                recyclerView.paddingRight,
+                bottomPadding
+            )
+
             windowInsets
         }
 

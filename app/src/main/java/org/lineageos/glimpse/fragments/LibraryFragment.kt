@@ -44,6 +44,14 @@ class LibraryFragment : Fragment(R.layout.fragment_library) {
                 rightMargin = insets.right
             }
 
+            val bottomPadding = insets.bottom + resources.getDimensionPixelSize(org.hlcyn.ui.R.dimen.nest_bottom_bar_height) + resources.getDimensionPixelSize(org.hlcyn.ui.R.dimen.nest_bottom_bar_margin_bottom) + resources.getDimensionPixelSize(R.dimen.main_bottom_nav_bar_margin_bottom)
+            libraryNestedScrollView.setPadding(
+                libraryNestedScrollView.paddingLeft,
+                libraryNestedScrollView.paddingTop,
+                libraryNestedScrollView.paddingRight,
+                bottomPadding
+            )
+
             windowInsets
         }
 

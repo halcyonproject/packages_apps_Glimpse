@@ -9,21 +9,23 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.button.MaterialButton
-import com.google.android.material.navigation.NavigationBarView
 import org.lineageos.glimpse.R
 import org.lineageos.glimpse.SettingsActivity
 import org.lineageos.glimpse.ext.getViewProperty
 import org.lineageos.glimpse.models.AlbumType
+import org.lineageos.glimpse.ui.views.HalcyonBottomNavBar
 
 class MainFragment : Fragment(R.layout.fragment_main) {
     // Views
-    private val navigationBarView by getViewProperty<NavigationBarView>(R.id.navigationBarView)
+    private val appBarLayout by getViewProperty<AppBarLayout>(R.id.appBarLayout)
+    private val collapsingToolbarLayout by getViewProperty<CollapsingToolbarLayout>(R.id.collapsingToolbarLayout)
+    private val navigationBarView by getViewProperty<HalcyonBottomNavBar>(R.id.navigationBarView)
     private val settingsMaterialButton by getViewProperty<MaterialButton>(R.id.settingsMaterialButton)
     private val toolbar by getViewProperty<MaterialToolbar>(R.id.toolbar)
     private val viewPager2 by getViewProperty<ViewPager2>(R.id.viewPager2)
@@ -33,7 +35,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
 
-                navigationBarView.menu.getItem(position).isChecked = true
+                navigationBarView.setSelectedTab(position)
+                collapsingToolbarLayout.title = getString(tabTitles[position])
             }
         }
     }
@@ -41,8 +44,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Toolbar
-        toolbar.setupWithNavController(findNavController())
+        // Collapsing toolbar title
+        collapsingToolbarLayout.title = getString(tabTitles[viewPager2.currentItem])
 
         settingsMaterialButton.setOnClickListener {
             val intent = Intent(context, SettingsActivity::class.java)
@@ -58,25 +61,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         viewPager2.offscreenPageLimit = fragments.size
         viewPager2.registerOnPageChangeCallback(onPageChangeCallback)
 
-        navigationBarView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.reelsFragment -> {
-                    viewPager2.currentItem = 0
-                    true
-                }
-
-                R.id.albumsFragment -> {
-                    viewPager2.currentItem = 1
-                    false
-                }
-
-                R.id.libraryFragment -> {
-                    viewPager2.currentItem = 2
-                    true
-                }
-
-                else -> false
-            }
+        navigationBarView.setOnTabSelectedListener { position ->
+            viewPager2.currentItem = position
+            collapsingToolbarLayout.title = getString(tabTitles[position])
+            appBarLayout.setExpanded(true, true)
         }
     }
 
@@ -89,7 +77,13 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     companion object {
-        // Keep in sync with the NavigationBarView menu
+        private val tabTitles = intArrayOf(
+            R.string.reels_title,
+            R.string.albums_title,
+            R.string.library_title,
+        )
+
+        // Keep in sync with HalcyonBottomNavBar tabs
         private val fragments = arrayOf(
             {
                 AlbumFragment().apply {

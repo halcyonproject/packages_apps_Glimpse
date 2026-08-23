@@ -285,7 +285,13 @@ class AlbumFragment : Fragment(R.layout.fragment_album) {
                 leftMargin = insets.left
                 rightMargin = insets.right
             }
-            recyclerView.updatePadding(bottom = insets.bottom)
+
+            val bottomPadding = if (hideToolbar) {
+                insets.bottom + resources.getDimensionPixelSize(org.hlcyn.ui.R.dimen.nest_bottom_bar_height) + resources.getDimensionPixelSize(org.hlcyn.ui.R.dimen.nest_bottom_bar_margin_bottom) + resources.getDimensionPixelSize(R.dimen.main_bottom_nav_bar_margin_bottom)
+            } else {
+                insets.bottom
+            }
+            recyclerView.updatePadding(bottom = bottomPadding)
 
             windowInsets
         }
