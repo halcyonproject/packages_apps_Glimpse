@@ -8,7 +8,9 @@ package org.lineageos.glimpse.ui.views
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.FrameLayout
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.vectorResource
@@ -34,7 +36,9 @@ class HalcyonBottomNavBar @JvmOverloads constructor(
         addView(composeView)
         composeView.setContent {
             HalcyonTheme {
-                HalcyonFloatingBottomBar {
+                HalcyonFloatingBottomBar(
+                    modifier = Modifier.navigationBarsPadding()
+                ) {
                     HalcyonFloatingBottomBarItem(
                         selected = selectedTabState.intValue == 0,
                         onClick = { selectTab(0) },

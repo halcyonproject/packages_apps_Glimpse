@@ -4,5 +4,5 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <dimen name="main_bottom_nav_bar_margin_bottom">28dp</dimen>
+    <dimen name="main_bottom_nav_bar_margin_bottom">0dp</dimen>
 </resources>
